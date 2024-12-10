@@ -11,11 +11,11 @@ public class DemoTestFirstTest {
 
 
     @BeforeAll
-    static void beforeAll() {
+    static void setUp() {
         Configuration.browser="firefox";
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
-        //Configuration.holdBrowserOpen = true;
+        // Configuration.holdBrowserOpen = true;          // для отладки
         Configuration.pageLoadStrategy = "eager";
 
     }
@@ -23,7 +23,6 @@ public class DemoTestFirstTest {
 
     @Test
     void firstTest() {
-        System.out.println("###      firstTest()");
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
@@ -36,7 +35,7 @@ public class DemoTestFirstTest {
         $(".react-datepicker__month-select").click();
         $(".react-datepicker__month-select").selectOption("February");
         $(".react-datepicker__year-select").selectOption("1980");
-        $$(".react-datepicker__day").findBy(text("11")).click();
+        $$(".react-datepicker__day").findBy(text("1")).click();
         $("#subjectsInput").setValue("any value");
         $("[for='hobbies-checkbox-2']").click();
         $("[for='hobbies-checkbox-1']").click();
