@@ -28,7 +28,7 @@ public class DemoTestFirstTest {
         executeJavaScript("$('footer').remove()");
         $("#firstName").setValue("Ivan");
         $("#lastName").setValue("Ivanov");
-        $("#userEmail").setValue("pochta@gmail.com").pressEnter();
+        $("#userEmail").setValue("pochta@gmail.com");
         $("[for='gender-radio-1']").click();
         $("#userNumber").setValue("9998887766");
         $("#dateOfBirthInput").click();
