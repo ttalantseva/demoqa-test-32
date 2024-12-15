@@ -12,10 +12,10 @@ public class DemoTestFirstTest {
 
     @BeforeAll
     static void setUp() {
-        Configuration.browser="firefox";
+        //Configuration.browser="firefox";    // для отладки
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
-        // Configuration.holdBrowserOpen = true;          // для отладки
+        //Configuration.holdBrowserOpen = true;          // для отладки
         Configuration.pageLoadStrategy = "eager";
 
     }
@@ -28,7 +28,7 @@ public class DemoTestFirstTest {
         executeJavaScript("$('footer').remove()");
         $("#firstName").setValue("Ivan");
         $("#lastName").setValue("Ivanov");
-        $("#userEmail").setValue("pochta@gmail.com");
+        $("#userEmail").setValue("pochta@gmail.com").pressEnter();
         $("[for='gender-radio-1']").click();
         $("#userNumber").setValue("9998887766");
         $("#dateOfBirthInput").click();
@@ -36,15 +36,13 @@ public class DemoTestFirstTest {
         $(".react-datepicker__month-select").selectOption("February");
         $(".react-datepicker__year-select").selectOption("1980");
         $$(".react-datepicker__day").findBy(text("1")).click();
-        $("#subjectsInput").setValue("any value");
+        $("#subjectsInput").setValue("any value").pressEnter();
         $("[for='hobbies-checkbox-2']").click();
         $("[for='hobbies-checkbox-1']").click();
         $("#uploadPicture").uploadFromClasspath("капча.jpg");
         $("#currentAddress").setValue("Moscow, Kremlin");
-        $(".css-tlfecz-indicatorContainer").click();
-        $("#react-select-3-option-2").click();
-        $(".css-tlfecz-indicatorContainer").click();
-        $("#react-select-4-option-0").click();
+        $("#react-select-3-input").setValue("Haryana").pressEnter();
+        $("#react-select-4-input").setValue("Karnal").pressEnter();
         $("#submit").click();
 
         //проверка значений
