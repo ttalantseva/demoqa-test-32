@@ -12,10 +12,8 @@ public class DemoTestFirstTest {
 
     @BeforeAll
     static void setUp() {
-        //Configuration.browser="firefox";    // для отладки
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
-        //Configuration.holdBrowserOpen = true;          // для отладки
         Configuration.pageLoadStrategy = "eager";
 
     }
@@ -35,8 +33,8 @@ public class DemoTestFirstTest {
         $(".react-datepicker__month-select").click();
         $(".react-datepicker__month-select").selectOption("February");
         $(".react-datepicker__year-select").selectOption("1980");
-        $$(".react-datepicker__day").findBy(text("1")).click();
-        $("#subjectsInput").setValue("any value").pressEnter();
+        $$(".react-datepicker__day").findBy(text("11")).click();
+        $("#subjectsInput").setValue("Arts").pressEnter();
         $("[for='hobbies-checkbox-2']").click();
         $("[for='hobbies-checkbox-1']").click();
         $("#uploadPicture").uploadFromClasspath("капча.jpg");
@@ -52,7 +50,7 @@ public class DemoTestFirstTest {
         $(".table-responsive").shouldHave(text("Male"));
         $(".table-responsive").shouldHave(text("9998887766"));
         $(".table-responsive").shouldHave(text("11 February,1980"));
-        $(".table-responsive").shouldHave(text("any value"));
+        $(".table-responsive").shouldHave(text("Arts"));
         $(".table-responsive").shouldHave(text("Reading, Sports"));
         $(".table-responsive").shouldHave(text("капча.jpg"));
         $(".table-responsive").shouldHave(text("Moscow, Kremlin"));
