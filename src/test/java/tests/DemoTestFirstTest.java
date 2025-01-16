@@ -1,3 +1,5 @@
+package tests;
+
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -30,7 +32,7 @@ public class DemoTestFirstTest {
         $("[for='gender-radio-1']").click();
         $("#userNumber").setValue("9998887766");
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").click();
+        //$(".react-datepicker__month-select").click();
         $(".react-datepicker__month-select").selectOption("February");
         $(".react-datepicker__year-select").selectOption("1980");
         $$(".react-datepicker__day").findBy(text("11")).click();
