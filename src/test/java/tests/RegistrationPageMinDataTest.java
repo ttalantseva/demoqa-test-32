@@ -21,28 +21,28 @@ public class RegistrationPageMinDataTest extends TestBase{
     void regPageMinDataTest() {
 
         registrationPage.open()
-                .setFirstName("Иван")
-                .setLastName("Иванов")
-                .setGenderSelector("Male")
-                .setMobileSelector("1111111111")
-                .setDataOfBirth("12", "February", "1985")
+                .setFirstName(FIRST_NAME)
+                .setLastName(LAST_NAME)
+                .setGenderSelector(USER_GENDER)
+                .setMobileSelector(USER_MOBILE)
+                .setDataOfBirth(USER_DAY_BIRTH, USER_MONTH_BIRTH, USER_YEAR_BIRTH)
                 .register();
 
-        checkResult.resultCheck("Student Name", "Иван Иванов")
-                .resultCheck("Gender", "Male")
-                .resultCheck("Mobile", "1111111111")
-                .resultCheck("Date of Birth", "12 February,1985");
+        checkResult.resultCheck("Student Name", FIRST_NAME + " " + LAST_NAME)
+                .resultCheck("Gender", USER_GENDER)
+                .resultCheck("Mobile", USER_MOBILE)
+                .resultCheck("Date of Birth", USER_DAY_BIRTH + " " + USER_MONTH_BIRTH + "," + USER_YEAR_BIRTH);
     }
 
     @Test
     void regPageMinDataNegativeTest() {
 
         registrationPage.open()
-                .setFirstName("Иван")
-                .setLastName("Иванов")
-                .setGenderSelector("Male")
+                .setFirstName(FIRST_NAME)
+                .setLastName(LAST_NAME)
+                .setGenderSelector(USER_GENDER)
                 .setMobileSelector("")
-                .setDataOfBirth("12", "February", "1985")
+                .setDataOfBirth(USER_DAY_BIRTH, USER_MONTH_BIRTH, USER_YEAR_BIRTH)
                 .register();
 
         checkResult.NegativeResultCheck();
