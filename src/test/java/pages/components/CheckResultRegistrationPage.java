@@ -20,8 +20,8 @@ public class CheckResultRegistrationPage {
     }
 
 
-    public void NegativeResultCheck() {
-        $("#userNumber").shouldHave(Condition.cssValue("border-color", "rgb(220, 53, 69)"));
+    public void negativeResultCheck() {
+        userNumberElement.shouldHave(Condition.cssValue("border-color", "rgb(220, 53, 69)"));
     }
 }
 
