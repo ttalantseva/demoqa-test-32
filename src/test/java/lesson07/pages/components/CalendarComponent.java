@@ -1,4 +1,4 @@
-package pages.components;
+package lesson07.pages.components;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;

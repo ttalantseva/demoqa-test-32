@@ -1,8 +1,8 @@
-package pages;
+package lesson07.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import pages.components.CalendarComponent;
+import lesson07.pages.components.CalendarComponent;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -77,13 +77,12 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setSportHobby() {
-        hobbySportSelector.click();
-        return this;
-    }
-
-    public RegistrationPage setReadingHobby() {
-        hobbyReadingSelector.click();
+    public RegistrationPage setHobby(String hobby) {
+        if("Sports".equals(hobby)) {
+            hobbySportSelector.click();
+        } else if("Reading".equals(hobby)) {
+            hobbyReadingSelector.click();
+        }
         return this;
     }
 

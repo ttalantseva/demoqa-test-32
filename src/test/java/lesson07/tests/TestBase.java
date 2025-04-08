@@ -1,7 +1,6 @@
-package tests;
+package lesson07.tests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
@@ -14,8 +13,8 @@ public class TestBase {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
-//        Configuration.timeout = 10000;
-//        Configuration.holdBrowserOpen = true;
+        Configuration.timeout = 10000;
+//      Configuration.holdBrowserOpen = true;
     }
 
     @AfterEach
